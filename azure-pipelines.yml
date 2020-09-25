@@ -39,6 +39,11 @@ steps:
     searchFolder: '$(System.DefaultWorkingDirectory)'
     otherConsoleOptions: '/Framework:.NETCoreApp,Version=3.1'
 
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'XUnit'
+    testResultsFiles: '**/TEST-*.xml'
+
 - task: PublishBuildArtifacts@1    
   displayName: 'Publish Artifact: drop'
   inputs:
