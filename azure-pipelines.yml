@@ -18,7 +18,8 @@ variables:
   group: MWL-Variable-Group
 
 #name: $(Build.DefinitionName)-$(date:yyyyMMdd)$(rev:.r)
-name: jjb.major.$(major-minor).$(revision)
+#name: jjb.major.$(major-minor).$(revision)
+name: $(jjb).$(major).$(major-minor).$(revision)
 
 steps:
 - task: NuGetToolInstaller@1
